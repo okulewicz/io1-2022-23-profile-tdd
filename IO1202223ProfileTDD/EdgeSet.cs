@@ -12,7 +12,8 @@
             {
                 return 0;
             }
-            return distances.Average(d => d / distances.Max());
+            double max = distances.Max();
+            return distances.Average(d => d / max);
         }
     }
 }
