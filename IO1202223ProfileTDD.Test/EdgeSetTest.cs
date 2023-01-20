@@ -16,5 +16,20 @@ namespace IO1202223ProfileTDD.Test
             double realNormalizedAverage = EdgeSet.ComputeAverage(distances);
             Assert.AreEqual(expectedNormalizedAverage, realNormalizedAverage, AcceptablePrecision);
         }
+
+        [TestMethod]
+        public void TestForEmptyAndOnlyZeros()
+        {
+            double expectedNormalizedAverage = 0.0;
+            List<double> distances = new List<double>();
+            double realNormalizedAverage = EdgeSet.ComputeAverage(distances);
+            Assert.AreEqual(expectedNormalizedAverage, realNormalizedAverage, AcceptablePrecision);
+
+            distances.Add(0.0);
+            distances.Add(0.0);
+            distances.Add(0.0);
+            realNormalizedAverage = EdgeSet.ComputeAverage(distances);
+            Assert.AreEqual(expectedNormalizedAverage, realNormalizedAverage, AcceptablePrecision);
+        }
     }
 }
