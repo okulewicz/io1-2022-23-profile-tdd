@@ -4,7 +4,8 @@
     {
         public static double ComputeAverage(List<double> distances)
         {
-            return distances.Average(d => d / distances.Max());
+            double max = distances.Max();
+            return distances.Average(d => d / max);
         }
     }
 }
