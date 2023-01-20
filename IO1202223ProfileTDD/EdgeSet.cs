@@ -4,7 +4,7 @@
     {
         public static double ComputeAverage(List<double> distances)
         {
-            throw new NotImplementedException();
+            return distances.Average(d => d / distances.Max());
         }
     }
 }
